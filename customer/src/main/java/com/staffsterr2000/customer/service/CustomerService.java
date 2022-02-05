@@ -1,13 +1,14 @@
 package com.staffsterr2000.customer.service;
 
 import com.staffsterr2000.customer.model.entity.Customer;
+import com.staffsterr2000.customer.repository.CustomerRepository;
 import com.staffsterr2000.customer.request.CustomerRegistrationRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public record CustomerService() {
+public record CustomerService(CustomerRepository customerRepository) {
 
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
@@ -16,6 +17,6 @@ public record CustomerService() {
                 .email(request.email())
                 .build();
 
-        log.info("new customer {}", customer);
+        customerRepository.save(customer);
     }
 }
