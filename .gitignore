@@ -1,8 +1,10 @@
-# Itellij
-.idea/
-*.iml
-*.iws
-
-# Maven
-log/
 target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+.editorconfig
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
