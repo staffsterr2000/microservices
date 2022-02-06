@@ -9,6 +9,7 @@
     <modules>
         <module>customer</module>
         <module>fraud</module>
+        <module>eurika-server</module>
     </modules>
     <name>microservices</name>
     <description>microservices trial</description>
